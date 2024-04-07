@@ -29,7 +29,7 @@
 				max-height: 90%;
 				cursor: pointer;
 				/* 当鼠标悬停在图片上时显示指针 */
-				border: 4px solid  #ff7b07;
+				border: 4px solid #ff7b07;
 				/* 添加白色边框，可以根据需要调整颜色和宽度 */
 				box-sizing: border-box;
 				/* 边框宽度包含在盒子大小内 */
@@ -54,22 +54,24 @@
 				color: #fff;
 				font-size: 50px;
 				z-index: 10000;
-				background-color:rgba(244, 244, 244, 0.4);
+				background-color: rgba(244, 244, 244, 0.4);
 				border-radius: 3px;
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				user-select: none; /* 禁止选中 */
+				user-select: none;
+				/* 禁止选中 */
 				/* 确保箭头在图片之上 */
 			}
 
 			.arrow.left {
 				left: 10%;
 			}
-			
+
 			.arrow.right {
 				right: 10%;
 			}
+
 			.arrow.left:hover {
 				color: #ff5500;
 			}
@@ -99,7 +101,7 @@
 				justify-content: center;
 				align-items: center;
 				/* *9background-color: #ff5500; */
-			} 
+			}
 
 			#introduction {
 				margin: 15px 100px;
@@ -137,7 +139,7 @@
 				margin: 3px 5px;
 				width: 18%;
 				min-height: 10px;
-				border: 2px solid  #ff7b07 ;
+				border: 2px solid #ff7b07;
 				border-radius: 1px;
 			}
 
@@ -148,28 +150,30 @@
 			.modDescription>p {
 				margin: 3px auto;
 			}
-			
-			#navBtnBox{
+
+			#navBtnBox {
 				margin: 0 10%;
 				width: 80%;
 				min-width: 800px;
-				background-color:#dddddd;
+				background-color: #dddddd;
 				border-radius: 5px;
 				display: flex;
 				flex-flow: row wrap;
 				justify-content: flex-start;
 				align-items: center;
 			}
-			#navBtnBox > button{
+
+			#navBtnBox>button {
 				width: auto;
 				height: 30px;
 				text-align: center;
 				margin: 15px 10px;
 				padding: 0px 8px;
 				font-size: 15px;
-				
+
 			}
-			#tips{
+
+			#tips {
 				margin: 0 10%;
 				width: 80%;
 				min-width: 800px;
@@ -177,21 +181,66 @@
 				color: #ff0000;
 				font-weight: 600;
 			}
-			.fileNameSpan{
+
+			.fileNameSpan {
 				margin-left: 50px;
 			}
-			
-			
+
+
 			/* 闪烁动画 */
-			  @keyframes blink {
-			    0% { border-color: transparent; }
-			    50% { border-color: red; }
-			    100% { border-color: transparent; }
+			@keyframes blink {
+				0% {
+					border-color: transparent;
+				}
+
+				50% {
+					border-color: red;
+				}
+
+				100% {
+					border-color: transparent;
+				}
+			}
+
+			/* 添加闪烁边框的类 */
+			.blink-border {
+				animation: blink 0.5s 4;
+				/* 0.5秒闪烁两次 */
+			}
+
+			/* 更新日志样式 */
+			.log-container {
+				margin-left: 10px;
+				margin-right: 10px;
+				background-color: #dfd8ff;
+				border: 2px solid #ffaa00;
+				border-radius: 7px;
+				padding: 10px;
+				margin-bottom: 20px;
+				font-size: 16px;
+			}
+
+			.log-header {
+				cursor: pointer;
+			}
+
+			.log-content {
+				display: none;
+				padding: 10px;
+				background-color: #f9f9f9;
+			}
+
+			.arrow-icon {
+			    margin-right: 5px;
+			  }
+
+			
+			  .expanded .arrow-icon::after {
+			    content: '\25BC'; /* Unicode 编码，表示一个向下的小箭头 */
 			  }
 			
-			  /* 添加闪烁边框的类 */
-			  .blink-border {
-			    animation: blink 0.5s 4; /* 0.5秒闪烁两次 */
+			  .arrow-icon::after {
+			    content: '\25B6'; /* Unicode 编码，表示一个向右的小箭头 */
 			  }
 		</style>
 	</head>
@@ -223,7 +272,7 @@
 					<div class="modDescription">
 						<p><b>MOD名称：</b>特质有用化和终极技能增强<span class="fileNameSpan"><b>文件名：</b>XXPFUsefulTrait</span></p>
 						<p><b>作者：</b>Kellywang</p>
-						<p><b>更新日期：</b>2024-03-30</p>
+						<p><b>更新日期：</b>2024-04-7</p>
 						<p><b>适配版本：</b>【1.2.7-1.2.9】</p>
 						<p><b>主要内容：</b>这个mod是本系列MOD中最核心的部分之一。特质变得有用，好的特质能够大幅提升血量、带兵数量、提升士气和城镇忠诚等等。大幅强化上三路的终极技能加成，有的能大幅提升血量，有的能回血，有的加快移速，有的大幅提升弹药量。
 						</p>
@@ -243,6 +292,15 @@
 						<img class="littleImage" src="./img/u_8.jpg" alt="图片" />
 						<img class="littleImage" src="./img/u_9.jpg" alt="图片" />
 						<img class="littleImage" src="./img/u_10.jpg" alt="图片" />
+					</div>
+					<div class="log-container">
+						<div class="log-header" onclick="toggleLog(this)"> <span class="arrow-icon"></span>更新日志：</div>
+						<div class="log-content">
+							<p>V1.0.5【2024-04-7】:</p>
+							<ul>
+								<li>提升技能学习上限为550，原版是330之后学习效率为0，现在是到550之后学习效率才为0。</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 
@@ -271,16 +329,16 @@
 						<img class="littleImage" src="./img/b_5.jpg" alt="图片" />
 					</div>
 				</div>
-				
+
 				<div class="modCard" id="mod2">
 					<div class="modDescription">
 						<p><b>MOD名称：</b>新增流浪者与英雄随机事件<span class="fileNameSpan"><b>文件名：</b>XXPFWanderer</span></p>
 						<p><b>作者：</b>Kellywang</p>
-						<p><b>更新日期：</b>2024-03-30</p>
+						<p><b>更新日期：</b>2024-04-7</p>
 						<p><b>适配版本：</b>【1.2.7-1.2.9】</p>
 						<p><b>主要内容：</b>这个mod是本系列MOD中最核心的部分之一。新增了很多强力的流浪者，他们虽然不像星星扩展里面14英雄那样具有特殊能力，但是如果结合上面的特质有用化和终极技能强化，他们也会有不俗的能力。
-						你也可以添加属于自己的流浪者。还有就是英雄随机事件，这一部分是本mod的核心内容，这一部分给流浪者和英雄们添加了潜在的性格，这些性格特征将会体现在随机事件中，不同的性格会触发不同的随机事件。
-						玩家不同的选择对于不同的性格也会造成不同的结果。同时还增加了更多其他的互动，比如你可以在场景中放两把椅子，然后坐着交谈。
+							你也可以添加属于自己的流浪者。还有就是英雄随机事件，这一部分是本mod的核心内容，这一部分给流浪者和英雄们添加了潜在的性格，这些性格特征将会体现在随机事件中，不同的性格会触发不同的随机事件。
+							玩家不同的选择对于不同的性格也会造成不同的结果。同时还增加了更多其他的互动，比如你可以在场景中放两把椅子，然后坐着交谈。
 						</p>
 						<p><b>下载与安装：</b>本mod近几天在会在赞助群发布，安装方法和普通mod一样。建议在新档加入，不建议中途去掉。</p>
 						<p><b>兼容与依赖：</b>需要四前置。可与绝大多数mod一起使用。</p>
@@ -291,8 +349,18 @@
 						<img class="littleImage" src="./img/co_1.jpg" alt="图片" />
 						<img class="littleImage" src="./img/co_2.jpg" alt="图片" />
 					</div>
+					<div class="log-container">
+						<div class="log-header" onclick="toggleLog(this)"> <span class="arrow-icon"></span>更新日志：</div>
+						<div class="log-content">
+							<p>V1.0.5【2024-04-7】:</p>
+							<ul>
+								<li>性格随机事件：同一个随机事件，对于7种性格的英雄会有不同的描述和不同的结果。</li>
+								<li>性格显示：现在会在英雄百科页面显示英雄的性格。（一共分为七种性格）</li>
+							</ul>
+						</div>
+					</div>
 				</div>
-				
+
 
 				<div class="modCard" id="mod3">
 					<div class="modDescription">
@@ -301,9 +369,10 @@
 						<p><b>更新日期：</b>2024-03-30</p>
 						<p><b>适配版本：</b>【1.2.7-1.2.9】</p>
 						<p><b>主要内容：</b>这个mod主要是具有特殊的玩法，一共分为3种模式：英雄模式、同文化士兵模式、强盗士兵模式。开局会让你选择这三个模式，对于同一个存档，选择之后无法再更改。
-						<br/>【英雄模式】：只能招募英雄和流浪者，城镇和村子的招兵栏招募不了，其他方式获得的士兵不会在部队存在超过1天。
-						<br/>【同文化士兵模式】：同理，只能招募玩家同一种文化的士兵，其他士兵不能招募，其他方式获得的不会在部队超过1天。
-						<br/>【强盗士兵模式】：同理，只能招募强盗，且不能转化为正规军，其他士兵不能招募，其他方式获得的不会在部队超过1天。</p>
+							<br />【英雄模式】：只能招募英雄和流浪者，城镇和村子的招兵栏招募不了，其他方式获得的士兵不会在部队存在超过1天。
+							<br />【同文化士兵模式】：同理，只能招募玩家同一种文化的士兵，其他士兵不能招募，其他方式获得的不会在部队超过1天。
+							<br />【强盗士兵模式】：同理，只能招募强盗，且不能转化为正规军，其他士兵不能招募，其他方式获得的不会在部队超过1天。
+						</p>
 						<p><b>下载与安装：</b>暂时只在星星扩展赞助群提供下载，安装方法和普通mod一样。本mod可以在存档中途添加或去掉，对存档不会造成任何影响。去掉之后所以招募限制都会随之去掉。</p>
 						<p><b>兼容与依赖：</b>需要四前置。可与几乎所有mod一起使用。</p>
 						<p><b>推荐指数：</b>★★★★☆</p>
@@ -315,7 +384,7 @@
 						<img class="littleImage" src="./img/m_3.jpg" alt="图片" />
 					</div>
 				</div>
-				
+
 				<div class="modCard" id="mod4">
 					<div class="modDescription">
 						<p><b>MOD名称：</b>军营和武器库<span class="fileNameSpan"><b>文件名：</b>XXPFMilitaryCamp</span></p>
@@ -365,7 +434,8 @@
 						<p><b>作者：</b>Kellywang</p>
 						<p><b>更新日期：</b>2024-03-30</p>
 						<p><b>适配版本：</b>【1.2.7-1.2.9】</p>
-						<p><b>主要内容：</b> 在原版地图的基础上增加了两个岛屿。但是由于编辑器和之前文件丢失的原因，当前版本的新地图不是很完美，很多细节不够完善，对于中低配电脑有时候也略有卡顿（包括我自己的电脑也会卡，我自己的电脑配置也不高），所以请选择性使用。
+						<p><b>主要内容：</b>
+							在原版地图的基础上增加了两个岛屿。但是由于编辑器和之前文件丢失的原因，当前版本的新地图不是很完美，很多细节不够完善，对于中低配电脑有时候也略有卡顿（包括我自己的电脑也会卡，我自己的电脑配置也不高），所以请选择性使用。
 						<p><b>下载与安装：</b>暂时只在星星扩展赞助群提供下载，安装方法和普通mod一样。只能新档加入，中途不能去掉。</p>
 						<p><b>兼容与依赖：</b>需要四前置。不要与其他包含新地图的mod一起使用。</p>
 						<p><b>推荐指数：</b>★★★☆☆</p>
@@ -407,70 +477,84 @@
 
 		<!-- 图片放大容器 -->
 		<div id="fullscreenContainer" class="fullscreen" style="display:none;">
-		  <span id="closeBtn" class="close-btn">&times;</span>
-		  <span id="leftArrow" class="arrow left">&lt;</span>
-		  <img id="fullscreenImg" src="" alt="Full Screen Image">
-		  <span id="rightArrow" class="arrow right">&gt;</span>
+			<span id="closeBtn" class="close-btn">&times;</span>
+			<span id="leftArrow" class="arrow left">&lt;</span>
+			<img id="fullscreenImg" src="" alt="Full Screen Image">
+			<span id="rightArrow" class="arrow right">&gt;</span>
 		</div>
 		<script>
 			// 滚动到指定section的函数
-			  function scrollToSection(sectionId) {
-			    var section = document.getElementById(sectionId);
-			    if (section) {
-			      section.scrollIntoView({ behavior: 'smooth' }); // 平滑滚动到指定section
-			      section.classList.add('blink-border'); // 添加闪烁边框的类
-			      // 延迟一定时间后移除闪烁边框的类
-			      setTimeout(function() {
-			        section.classList.remove('blink-border');
-			      }, 1500); // 延迟1秒后移除
+			function scrollToSection(sectionId) {
+				var section = document.getElementById(sectionId);
+				if (section) {
+					section.scrollIntoView({
+						behavior: 'smooth'
+					}); // 平滑滚动到指定section
+					section.classList.add('blink-border'); // 添加闪烁边框的类
+					// 延迟一定时间后移除闪烁边框的类
+					setTimeout(function() {
+						section.classList.remove('blink-border');
+					}, 1500); // 延迟1秒后移除
+				}
+			}
+			// 获取元素
+			var littleImages = document.querySelectorAll('.littleImage');
+			var fullscreenContainer = document.getElementById('fullscreenContainer');
+			var fullscreenImg = document.getElementById('fullscreenImg');
+			var closeBtn = document.getElementById('closeBtn');
+			var leftArrow = document.getElementById('leftArrow');
+			var rightArrow = document.getElementById('rightArrow');
+			var currentIndex = 0; // 当前显示的图片索引
+
+			// 点击每个小图片时，显示全屏图片
+			littleImages.forEach(function(image, index) {
+				image.addEventListener('click', function() {
+					currentIndex = index;
+					showFullscreenImage(currentIndex);
+				});
+			});
+
+			// 点击关闭按钮时，隐藏全屏图片
+			closeBtn.addEventListener('click', function() {
+				fullscreenContainer.style.display = 'none'; // 隐藏全屏容器
+			});
+
+			// 点击左箭头时，显示前一张图片
+			leftArrow.addEventListener('click', function() {
+				currentIndex = (currentIndex - 1 + littleImages.length) % littleImages.length;
+				showFullscreenImage(currentIndex);
+			});
+
+			// 点击右箭头时，显示后一张图片
+			rightArrow.addEventListener('click', function() {
+				currentIndex = (currentIndex + 1) % littleImages.length;
+				showFullscreenImage(currentIndex);
+			});
+
+			// 显示全屏图片
+			function showFullscreenImage(index) {
+				fullscreenImg.src = littleImages[index].src; // 设置全屏图片的源为指定索引的小图片的源
+				fullscreenContainer.style.display = 'flex'; // 显示全屏容器
+			}
+
+			// 点击全屏图片时，点击关闭按钮时，都会隐藏全屏图片
+			fullscreenContainer.addEventListener('click', function(event) {
+				if (event.target === this) {
+					fullscreenContainer.style.display = 'none';
+				}
+			});
+
+			// 更新日志：
+			function toggleLog(header) {
+			    var content = header.nextElementSibling;
+			    if (content.style.display === 'block') {
+			      content.style.display = 'none';
+			      header.classList.remove('expanded');
+			    } else {
+			      content.style.display = 'block';
+			      header.classList.add('expanded');
 			    }
 			  }
-		  // 获取元素
-		  var littleImages = document.querySelectorAll('.littleImage');
-		  var fullscreenContainer = document.getElementById('fullscreenContainer');
-		  var fullscreenImg = document.getElementById('fullscreenImg');
-		  var closeBtn = document.getElementById('closeBtn');
-		  var leftArrow = document.getElementById('leftArrow');
-		  var rightArrow = document.getElementById('rightArrow');
-		  var currentIndex = 0; // 当前显示的图片索引
-		
-		  // 点击每个小图片时，显示全屏图片
-		  littleImages.forEach(function(image, index) {
-		    image.addEventListener('click', function() {
-		      currentIndex = index;
-		      showFullscreenImage(currentIndex);
-		    });
-		  });
-		
-		  // 点击关闭按钮时，隐藏全屏图片
-		  closeBtn.addEventListener('click', function() {
-		    fullscreenContainer.style.display = 'none'; // 隐藏全屏容器
-		  });
-		
-		  // 点击左箭头时，显示前一张图片
-		  leftArrow.addEventListener('click', function() {
-		    currentIndex = (currentIndex - 1 + littleImages.length) % littleImages.length;
-		    showFullscreenImage(currentIndex);
-		  });
-		
-		  // 点击右箭头时，显示后一张图片
-		  rightArrow.addEventListener('click', function() {
-		    currentIndex = (currentIndex + 1) % littleImages.length;
-		    showFullscreenImage(currentIndex);
-		  });
-		
-		  // 显示全屏图片
-		  function showFullscreenImage(index) {
-		    fullscreenImg.src = littleImages[index].src; // 设置全屏图片的源为指定索引的小图片的源
-		    fullscreenContainer.style.display = 'flex'; // 显示全屏容器
-		  }
-		
-		  // 点击全屏图片时，点击关闭按钮时，都会隐藏全屏图片
-		  fullscreenContainer.addEventListener('click', function(event) {
-		    if (event.target === this) {
-		      fullscreenContainer.style.display = 'none';
-		    }
-		  });
 		</script>
 
 	</body>

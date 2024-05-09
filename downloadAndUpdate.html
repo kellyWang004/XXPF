@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>星星扩展-下载更新</title>
+		<link rel="icon" href="img/newicon.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="./css/base.css" />
+		<link rel="stylesheet" type="text/css" href="./css/baseNew.css" />
+		<link rel="stylesheet" type="text/css" href="./font/css/all.css" />
+		<style type="text/css">
+			.textBox img {
+				width: 35%;
+				border: rgb(255, 85, 0) 2px solid;
+				border-radius: 4px;
+			}
+
+			.contentBox>h2 {
+				font-size:20px;
+			}
+
+			.contentBox h4 {
+				margin: 5px 0;
+			}
+
+			.textBox {
+				font-size: 16px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="mainBox">
+			<div id="backgroundHeadBox">
+				<div id="headBox">
+					<img id="logoImg" src="./img/logo_b.png" alt="" />
+					<div id="navigatorBox">
+						<a href="Index.html" class="navigatorOption"><i class="fas fa-home"></i>首页</a>
+						<a href="install.html" class="navigatorOption"><i class="fab fa-instalod"></i>安装教程</a>
+						<a href="error.html" class="navigatorOption"><i class="fas fa-wrench"></i>崩溃解决</a>
+						<a href="Information.html" class="navigatorOption"><i class="fas fa-disease"></i>星星攻略</a>
+						<a href="updateLog.html" class="navigatorOption"><i class="fas fa-clipboard-list"></i>更新日志</a>
+						<a href="newmod.html" class="navigatorOption"><i class="fas fa-disease"></i>新MOD</a>
+						<a href="downloadAndUpdate.html" class="navigatorOption"><i class="fas fa-download"></i>下载与更新<div
+								class="highlightColor0 highlight0"></div></a>
+						<a href="tutorial.html" class="navigatorOption"><i class="fas fa-code"></i>学习制作</a>
+						<a href="support.html" class="navigatorOption"><i class="fas fa-laugh-beam"></i>支持作者（赞助）</a>
+					</div>
+				</div>
+			</div>
+			<div id="backgroundBodyBox">
+				<div id="bodyBox">
+					<div id="bodyLeft">
+						<div class="contentBox">
+
+							<h2>下载</h2>
+							<div class="textBox">
+								<div id="recentEventContent01" class="recentEventContent">
+									<div id="mainText01" class="mainText">
+										公共版：请在中文站或是QQ群里下载。
+										<br />
+										赞助版：赞助群内下载。
+									</div>
+								</div>
+							</div>
+							<br />
+							<h2>更新注意事项</h2>
+							<div class="textBox">
+								<div id="recentEventContent01" class="recentEventContent">
+									<div id="mainText01" class="mainText">
+										<h4> <i class="fas fa-hand-point-right"></i>更新方法：</h4>
+										<p><i class="fas fa-leaf"></i>
+											更新方法：通过网盘下载的压缩包，直接将原来的XXexpand4(1.2.7-1.2.9)删除，然后将新的复制进去即可。
+										</p>
+										<p><i class="fas fa-leaf"></i>
+											注意：不要复制文件去粘贴点替换文件。因为这样替换可能导致文件不能完全更新。
+										</p>
+									</div>
+								</div>
+							</div>
+
+							<br />
+							<h2>常见疑问</h2>
+							<div class="textBox">
+								<div id="recentEventContent01" class="recentEventContent">
+									<div id="mainText01" class="mainText">
+										<h4> <i class="fas fa-hand-point-right"></i>1、为什么一定要删除原来的再把新的复制进去？ </h4>
+										<p><i class="fas fa-leaf"></i>
+											如果直接将新文件复制进去点击替换的话，会有可能导致部分文件不能正常的更新，为了确保不出问题，建议使用先删除在复制粘贴，而不是替换。</p>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<div id="bodyRight">
+						<h2>简介</h2>
+						<p>此网站暂时专门用于解决以下问题：</p>
+						<p><i class="fas fa-bookmark"></i>骑砍二玩家们在使用星星扩展的一系列问题，包括安装和报错问题。</p>
+						<p><i class="fas fa-bookmark"></i>实时提供mod的最新消息，以供喜爱本mod的朋友们及时获取。</p>
+						<p><i class="fas fa-bookmark"></i>分享作者写的或者将要写的一些mod基础教程以及其他mod制作相关的工具。</p>
+						<br />
+						<h2 >使用提示</h2>
+						<p><i class="fas fa-bookmark"></i>单击网站内的图片可放大！</p>
+						<br />
+					</div>
+				</div>
+			</div>
+			<div id="footerBox">
+				<div id="declaration">
+					<p>本网站几乎所有资源均来自于作者原创，未经允许，禁止转载，否则后果自负。</p>
+					<p>在此后的开发中可能会引用其他网络资源，如果您是该网络资源的作者，可以及时联系站长删除该资源。</p>
+					<p>站长联系方式为：2754422056@qq.com</p>
+				</div>
+			</div>
+		</div>
+
+
+
+
+		<!-- 图片放大容器 -->
+		<div id="fullscreenContainer" class="fullscreen" style="display:none;">
+			<span id="closeBtn" class="close-btn">&times;</span>
+			<span id="leftArrow" class="arrow left">&lt;</span>
+			<img class="littleImage" id="fullscreenImg" src="" alt="Full Screen Image">
+			<span id="rightArrow" class="arrow right">&gt;</span>
+		</div>
+		<script src="./js/base.js"></script>
+		<script type="text/javascript">
+			NavHoverEvent(".navigatorOption", 2);
+
+			function NavHoverEvent(navBoxClassName, disableIndex) {
+				const navMenuOptions = document.querySelectorAll(navBoxClassName);
+				if (navMenuOptions.length > 0) {
+					navMenuOptions.forEach((item, index) => {
+						if (index !== disableIndex) {
+							item.addEventListener('mouseenter', () => {
+								var highlight = document.createElement('div');
+								highlight.className = "highlight";
+								item.appendChild(highlight);
+								AddClassName(item, "highlightColor");
+								const rect = item.getBoundingClientRect();
+								const highlightWidth = rect.width;
+								const highlightLeft = rect.left + window.pageXOffset;
+								// highlight.style.transform = `translateX(${highlightLeft}px) scaleX(${highlightWidth})`;
+							});
+							item.addEventListener('mouseleave', () => {
+								RemoveElememts(".highlight");
+								RemoveClassName(item, "highlightColor");
+							});
+						}
+					});
+				}
+			}
+		</script>
+	</body>
+</html>

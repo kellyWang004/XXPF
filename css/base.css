@@ -1,0 +1,27 @@
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			footer{
+				padding-top: 40px;
+				display: flex;
+				background-color: rgb(39,40,34);
+			}
+			#declaration{
+				margin: 0 5%;
+				color: #ffffff;
+				font-size: 0.8rem;
+			}
